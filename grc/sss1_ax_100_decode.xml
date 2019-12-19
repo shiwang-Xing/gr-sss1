@@ -1,0 +1,94 @@
+<?xml version="1.0"?>
+<block>
+  <name>SSS1 AX100 TRANSCEIVER</name>
+  <key>sss1_ax_100_decode</key>
+  <category>[sss1]/GomSpace</category>
+  <import>import sss1</import>
+  <make>sss1.ax_100_decode($verbose, $viterbi, $scrambler, $rs)</make>
+  <!-- Make one 'param' node for every Parameter you want settable from the GUI.
+       Sub-nodes:
+       * name
+       * key (makes the value accessible as $keyname, e.g. in the make node)
+       * type -->
+  <param>
+    <name>Verbose</name>
+    <key>verbose</key>
+    <value>True</value>
+    <type>bool</type>
+     <option>
+       <name>Yes</name>
+       <key>True</key>
+     </option>
+     <option>
+       <name>No</name>
+       <key>False</key>
+     </option>
+  </param>
+
+  <param>
+    <name>Viterbi</name>
+    <key>viterbi</key>
+    <value>-1</value>
+    <type>int</type>
+    <option>
+       <name>Auto</name>
+       <key>-1</key>
+     </option>
+     <option>
+       <name>No</name>
+       <key>0</key>
+     </option>
+     <option>
+       <name>Yes</name>
+       <key>1</key>
+     </option>
+  </param>
+
+  <param>
+    <name>Scrambler</name>
+    <key>scrambler</key>
+    <value>-1</value>
+    <type>int</type>
+     <option>
+       <name>Auto</name>
+       <key>-1</key>
+     </option>
+     <option>
+       <name>No</name>
+       <key>0</key>
+     </option>
+     <option>
+       <name>Yes</name>
+       <key>1</key>
+     </option>
+  </param>
+
+  <param>
+    <name>Reed-Solomon</name>
+    <key>rs</key>
+    <value>-1</value>
+    <type>int</type>
+    <option>
+      <name>Auto</name>
+      <key>-1</key>
+    </option>
+    <option>
+      <name>No</name>
+      <key>0</key>
+    </option>
+    <option>
+      <name>Yes</name>
+      <key>1</key>
+    </option>
+  </param>
+
+  <sink>
+    <name>in</name>
+    <type>message</type>
+  </sink>
+
+  <source>
+    <name>out</name>
+    <type>message</type>
+  </source>
+</block>
